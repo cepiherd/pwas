@@ -2,7 +2,10 @@
  
 import { useState, useEffect } from 'react'
 import { subscribeUser, unsubscribeUser, sendNotification } from './actions'
- 
+
+
+
+
 function urlBase64ToUint8Array(base64String: string) {
   const padding = '='.repeat((4 - (base64String.length % 4)) % 4)
   const base64 = (base64String + padding)
@@ -103,7 +106,9 @@ function InstallPrompt() {
   const [isStandalone, setIsStandalone] = useState(false)
  
   useEffect(() => {
+    
     setIsIOS(
+      
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream
     )
  
@@ -122,13 +127,10 @@ function InstallPrompt() {
         <p>
           To install this app on your iOS device, tap the share button
           <span role="img" aria-label="share icon">
-            {' '}
-            ⎋{' '}
           </span>
-          and then "Add to Home Screen"
+          and then Add to Home Screen
           <span role="img" aria-label="plus icon">
-            {' '}
-            ➕{' '}
+          x
           </span>.
         </p>
       )}
